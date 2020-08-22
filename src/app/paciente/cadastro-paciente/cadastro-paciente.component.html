@@ -1,0 +1,30 @@
+<div class="p-grid">
+  <div class="p-col-12">
+    <span class="p-float-label">
+      <input id="nome" type="text" pInputText [(ngModel)]="paciente.nome">
+      <label for="nome">Nome completo</label>
+  </span>
+  </div>
+
+
+</div>
+<div class="p-grid">
+  <div class="p-col-12">
+    <span class="p-float-label">
+      <input id="cartaoSUS" type="text" pInputText [(ngModel)]="paciente.cartaoSus">
+      <label for="cartaoSUS">Número do cartão do SUS</label>
+  </span>
+  </div>
+
+
+</div>
+<div class="p-grid">
+
+  <div class="p-col-12">
+    <p-dropdown [options]="postosSaude | async"
+        [(ngModel)]="paciente.postoSaude" optionLabel="nome"
+        dataKey="id" placeholder="Selecione o seu posto de saúde"></p-dropdown>
+  </div>
+
+</div>
+<button pButton type="button" label="Cadastrar"  (click)="cadastrar()"></button>
