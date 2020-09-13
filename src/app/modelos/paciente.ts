@@ -5,6 +5,8 @@ export default class Paciente implements PacienteInterface{
   cartaoSus;
   postoSaude;
   usuario;
+  email;
+  celular;
 
   constructor(){
 

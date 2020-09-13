@@ -1,4 +1,4 @@
-import { PerfilUsuario } from './perfilUsuario';
+import { PerfilUsuario } from './enum/perfilUsuario';
 
 export default class Usuario{
 

@@ -1,3 +1,4 @@
+<h1>Cadastrar paciente</h1>
 <div class="p-grid">
   <div class="p-col-12">
     <span class="p-float-label">
@@ -5,8 +6,6 @@
       <label for="nome">Nome completo</label>
   </span>
   </div>
-
-
 </div>
 <div class="p-grid">
   <div class="p-col-12">
@@ -15,8 +14,22 @@
       <label for="cartaoSUS">Número do cartão do SUS</label>
   </span>
   </div>
-
-
+</div>
+<div class="p-grid">
+  <div class="p-col-12">
+    <span class="p-float-label">
+      <input id="email" type="text" pInputText [(ngModel)]="paciente.email">
+      <label for="email">E-mail (opcional)</label>
+  </span>
+  </div>
+</div>
+<div class="p-grid">
+  <div class="p-col-12">
+    <span class="p-float-label">
+      <input id="celular" type="text" pInputText [(ngModel)]="paciente.celular">
+      <label for="celular">Número do celular (opcional)</label>
+  </span>
+  </div>
 </div>
 <div class="p-grid">
 

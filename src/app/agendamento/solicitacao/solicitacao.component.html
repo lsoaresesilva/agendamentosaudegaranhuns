@@ -1,0 +1,75 @@
+<h1>Solicitar agendamento de consulta</h1>
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-12">
+    <label for="firstname1"><span class="labelFormulario">Prioridade</span></label>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="prioridade" value="0" [(ngModel)]="consulta.prioridade" label="Nenhuma"></p-radioButton>
+      </span>
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="prioridade" value="1" [(ngModel)]="consulta.prioridade" label="Idoso"></p-radioButton>
+      </span>
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="prioridade" value="2" [(ngModel)]="consulta.prioridade" label="Gestante">
+        </p-radioButton>
+      </span>
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="prioridade" value="3" [(ngModel)]="consulta.prioridade" label="Deficiente físico">
+        </p-radioButton>
+      </span>
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="prioridade" value="4" [(ngModel)]="consulta.prioridade" label="Bebê de colo">
+        </p-radioButton>
+      </span>
+    </div>
+  </div>
+
+  <div class="p-field p-col">
+    <label for="firstname1"><span class="labelFormulario">Especialidade</span></label>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="especialidade" value="0" [(ngModel)]="consulta.especialidade" label="Médico">
+        </p-radioButton>
+      </span>
+      <span class="p-inputgroup-addon">
+        <p-radioButton name="especialidade" value="1" [(ngModel)]="consulta.especialidade" label="Dentista">
+        </p-radioButton>
+      </span>
+    </div>
+
+  </div>
+
+</div>
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-3">
+    <span class="labelFormulario">Data da consulta</span>
+  </div>
+
+</div>
+<div class="p-fluid">
+  <div class="p-field">
+    <p-calendar (onSelect)="selecionarData($event)" [(ngModel)]="consulta.dataAgendamento" [locale]="localeCalendario"
+      [inline]="true"></p-calendar>
+  </div>
+</div>
+
+<div class="p-grid">
+  <div class="p-col-12">
+    <ng-container *ngIf="dataSelecionada == true">
+      <p-panel header="Horários disponíveis">
+        <div class="p-grid">
+          <div *ngFor="let horario of horariosDisponiveis" class="p-col-1">
+            <a (click)="selecionarHorario()"> {{horario}}</a>
+          </div>
+        </div>
+      </p-panel>
+
+    </ng-container>
+  </div>
+
+</div>
+<div class="p-fluid">
+  <div class="p-field p-col-2">
+    <button pButton type="button" label="Agendar" (click)="agendar()"></button>
+  </div>
+</div>

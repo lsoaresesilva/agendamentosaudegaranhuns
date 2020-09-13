@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { URL_REST } from '../../environments/environment';
 import Paciente from '../modelos/paciente';
 import Usuario from '../modelos/usuario';
-import { PerfilUsuario } from '../modelos/perfilUsuario';
+import { PerfilUsuario } from '../modelos/enum/perfilUsuario';
 
 @Injectable({
   providedIn: 'root'
